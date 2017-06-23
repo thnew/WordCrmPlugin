@@ -4,10 +4,24 @@ namespace WordCrmPlugin.Models
 {
     class SearchResult
     {
+        /// <summary>
+        /// The title of the search result
+        /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        /// The content of the search result
+        /// </summary>
         public string Content { get; set; }
 
+        /// <summary>
+        /// The link of the search result
+        /// </summary>
+        public Uri Link { get; set; }
+
+        /// <summary>
+        /// The text that will be displayed in the search results
+        /// </summary>
         public string ShortDescription
         {
             get
@@ -22,6 +36,9 @@ namespace WordCrmPlugin.Models
             }
         }
 
+        /// <summary>
+        /// The text that will be pasted into the document
+        /// </summary>
         public string ContentToPaste
         {
             get
@@ -29,7 +46,5 @@ namespace WordCrmPlugin.Models
                 return $"{Content}\n\nSee {Link} for more details.";
             }
         }
-
-        public Uri Link { get; set; }
     }
 }

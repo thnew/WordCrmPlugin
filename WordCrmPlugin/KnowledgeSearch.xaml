@@ -9,7 +9,7 @@
 
     <Grid Background="#FFE6E6E6" Margin="0,0,0,-16">
         <Label Content="Knowledge Search:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.221,-1.039" FontWeight="Bold"/>
-        <TextBox Padding="5" HorizontalAlignment="Stretch" Height="23" Margin="0,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox Name="SearchTerm" Padding="5" HorizontalAlignment="Stretch" Height="23" Margin="0,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
         <Label Content="Search in Folder:" HorizontalAlignment="Left" Margin="0,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.221,-1.039"/>
         <ComboBox Name="FolderSelect" Padding="5" HorizontalAlignment="Left" Margin="0,100,0,0" VerticalAlignment="Top" Width="144"/>
