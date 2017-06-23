@@ -161,6 +161,7 @@
     <Compile Include="KnowledgeSearch.xaml.cs">
       <DependentUpon>KnowledgeSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
