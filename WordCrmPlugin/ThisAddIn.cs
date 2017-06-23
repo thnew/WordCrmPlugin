@@ -25,7 +25,8 @@ namespace WordCrmPlugin
                 string title = "Knowledge";
                 CustomTaskPane ctp = Globals.ThisAddIn.CustomTaskPanes.Add(ctrl, title);
                 ctp.Visible = true;
-                ctp.Width = 320;
+                ctp.DockPositionRestrict = Office.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoHorizontal;
+                ctp.Width = 330;
                 ctp.DockPosition = Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionRight;
             });
         }

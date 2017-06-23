@@ -18,7 +18,9 @@
 
         <Rectangle Fill="#FF707070" HorizontalAlignment="Stretch" Height="1" Margin="0,164,0,0" StrokeThickness="0" VerticalAlignment="Top" />
 
-        <ListView Name="SearchResults" HorizontalAlignment="Stretch" Margin="0,170,0,0" BorderBrush="{x:Null}" BorderThickness="0" Background="{x:Null}">
+        <Label Content="Relevant Articles" HorizontalAlignment="Left" Margin="0,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.221,-1.039" FontWeight="Bold"/>
+
+        <ListView Name="SearchResults" HorizontalAlignment="Stretch" Margin="0,201,0,0" BorderBrush="{x:Null}" BorderThickness="0" Background="{x:Null}">
             <ListView.View>
                 <GridView>
                     <GridView.ColumnHeaderContainerStyle>
@@ -31,22 +33,36 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <TextBlock HorizontalAlignment="Stretch" Foreground="#FF016BFF" FontWeight="Bold" Margin="0,0,0,0" Text="{Binding Title}" />
+                                    <TextBlock HorizontalAlignment="Stretch"
+                                               TextWrapping="Wrap"
+                                               Width="300"
+                                               Foreground="#FF016BFF"
+                                               FontWeight="Bold"
+                                               Margin="0,0,0,0"
+                                               Text="{Binding Title}" />
                                     <TextBlock TextWrapping="Wrap"
+                                               Width="300"
                                                Text="{Binding ShortDescription}"
                                                HorizontalAlignment="Stretch"
                                                VerticalAlignment="Top"
-                                               Height="70"
-                                               Margin="0,20,0,0"
+                                               Height="45"
+                                               Margin="0,25,0,0"
                                                Foreground="#FF555555" />
 
-                                    <wpf:Button Click="PasteIntoDocument" Background="#fff" Content="Paste into Document" Tag="{Binding ContentToPaste}" Margin="0,110,0,0" Padding="5" HorizontalAlignment="Left"></wpf:Button>
+                                    <wpf:Button Click="PasteIntoDocument"
+                                                Background="#fff"
+                                                Content="Paste into Document"
+                                                Tag="{Binding ContentToPaste}"
+                                                Margin="0,70,0,0"
+                                                Padding="5"
+                                                HorizontalAlignment="Left" />
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
+            <!--Uncomment if you want to see the item in the visual editor-->
             <!--<ListView Height="100" Width="100">
                 <ListView.View>
                     <GridView>
@@ -55,6 +71,5 @@
                 </ListView.View>
             </ListView>-->
         </ListView>
-
     </Grid>
 </UserControl>
