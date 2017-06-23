@@ -13,21 +13,13 @@ namespace WordCrmPlugin
 {
     public partial class KnowledgeBaseSearch : UserControl
     {
-        private Document _document;
-        private ListViewItem SelectedItem {
-            get
-            {
-                foreach(ListViewItem item in listView1.Items)
-                {
-                    if (item.Selected)
-                    {
-                        return item;
-                    }
-                }
+        #region Private attributes
 
-                return null;
-            }
-        }
+        private Document _document;
+
+        #endregion
+
+        #region ctor
 
         public KnowledgeBaseSearch(Document doc)
         {
@@ -35,23 +27,23 @@ namespace WordCrmPlugin
 
             InitializeComponent();
 
-            var item = new ListViewItem("Thema A");
-            var item2 = new ListViewItem("Thema B");
-
-            listView1.Items.Add(item);
-            listView1.Items.Add(item2);
-        }
-        
-        private void ListView1_DoubleClick(object sender, EventArgs e)
-        {
-            var item = SelectedItem;
-            if(item == null)
+            wpfHost.Child = new KnowledgeSearch((string textToPaste) =>
             {
-                return;
-            }
-
-            _document.Paragraphs[1].Range.InsertParagraphBefore();
-            _document.Paragraphs[1].Range.Text = item.Text;
+                PasteTextToDocument(textToPaste);
+            });
         }
+
+        #endregion
+
+        #region Private methods
+
+        private void PasteTextToDocument(string textToPaste)
+        {
+            Range currRange = Globals.ThisAddIn.Application.Selection.Range;
+            currRange.InsertParagraph();
+            currRange.Text = textToPaste;
+        }
+
+        #endregion
     }
 }

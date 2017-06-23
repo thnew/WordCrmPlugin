@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.wpfHost = new System.Windows.Forms.Integration.ElementHost();
             this.SuspendLayout();
             // 
-            // listView1
+            // wpfHost
             // 
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 600);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.DoubleClick += new System.EventHandler(this.ListView1_DoubleClick);
+            this.wpfHost.BackColor = System.Drawing.Color.Transparent;
+            this.wpfHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wpfHost.Location = new System.Drawing.Point(0, 0);
+            this.wpfHost.Name = "wpfHost";
+            this.wpfHost.Size = new System.Drawing.Size(203, 532);
+            this.wpfHost.TabIndex = 5;
+            this.wpfHost.Text = "elementHost1";
+            this.wpfHost.Child = null;
             // 
             // KnowledgeBaseSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.wpfHost);
+            this.MaximumSize = new System.Drawing.Size(0, 2000);
+            this.MinimumSize = new System.Drawing.Size(0, 308);
             this.Name = "KnowledgeBaseSearch";
-            this.Size = new System.Drawing.Size(200, 600);
+            this.Size = new System.Drawing.Size(203, 532);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Integration.ElementHost wpfHost;
     }
 }

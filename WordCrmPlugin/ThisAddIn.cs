@@ -12,14 +12,6 @@ namespace WordCrmPlugin
 {
     public partial class ThisAddIn
     {
-        //private void ThisAddIn_Startup(object sender, System.EventArgs e)
-        //{
-        //}
-
-        //private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
-        //{
-        //}
-
         #region VSTO generated code
 
         /// <summary>
@@ -30,20 +22,11 @@ namespace WordCrmPlugin
         {
             Application.DocumentOpen += new Word.ApplicationEvents4_DocumentOpenEventHandler((Word.Document doc) => {
                 KnowledgeBaseSearch ctrl = new KnowledgeBaseSearch(doc);
-                string title = "Knowledgebase Articles";
+                string title = "Knowledge";
                 CustomTaskPane ctp = Globals.ThisAddIn.CustomTaskPanes.Add(ctrl, title);
                 ctp.Visible = true;
-                ctp.Width = 220;
+                ctp.Width = 320;
                 ctp.DockPosition = Microsoft.Office.Core.MsoCTPDockPosition.msoCTPDockPositionRight;
-            });
-
-            //Startup += new EventHandler(ThisAddIn_Startup);
-            //Shutdown += new EventHandler(ThisAddIn_Shutdown);
-            Application.DocumentBeforeSave += new Word.ApplicationEvents4_DocumentBeforeSaveEventHandler((Word.Document Doc, ref bool SaveAsUI, ref bool Cancel) =>
-            {
-                Doc.Paragraphs[1].Range.InsertParagraphBefore();
-                Doc.Paragraphs[1].Range.Text = "Thomas.";
-
             });
         }
 
