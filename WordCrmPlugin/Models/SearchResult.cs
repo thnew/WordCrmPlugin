@@ -12,9 +12,10 @@ namespace WordCrmPlugin.Models
         {
             get
             {
-                if (Content.Length > 150)
+                var maxLength = 150;
+                if (Content.Length > maxLength)
                 {
-                    return Content.Substring(0, 150);
+                    return $"{Content.Substring(0, maxLength - 3)}...";
                 }
 
                 return Content;
