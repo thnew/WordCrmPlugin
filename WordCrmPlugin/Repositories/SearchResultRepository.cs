@@ -8,12 +8,18 @@ namespace WordCrmPlugin.Repositories
     {
         #region Internal methods
 
+        /// <summary>
+        /// Returns search results for given search text and folder
+        /// </summary>
         internal IEnumerable<SearchResult> GetSearchResults(string searchText, string folder)
         {
             // TODO: Replace with real data
             return GenerateExampleSearchResults();
         }
 
+        /// <summary>
+        /// Returns all folder names
+        /// </summary>
         internal IEnumerable<string> GetFolderNames()
         {
             // TODO: Replace with real data
@@ -25,6 +31,9 @@ namespace WordCrmPlugin.Repositories
         // TODO: Remove / Replace with real data
         #region Example data
 
+        /// <summary>
+        /// Just some fake data as long as addin is not connected to CRM
+        /// </summary>
         private IEnumerable<SearchResult> GenerateExampleSearchResults()
         {
             return new List<SearchResult> {
@@ -49,6 +58,9 @@ namespace WordCrmPlugin.Repositories
             };
         }
 
+        /// <summary>
+        /// Just some fake data as long as addin is not connected to CRM
+        /// </summary>
         private IEnumerable<string> GenerateExampleFolderNames()
         {
             return new List<string> {

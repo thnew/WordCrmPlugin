@@ -43,14 +43,6 @@ namespace WordCrmPlugin
             AddSearchResultsToUi(searchResults);
         }
 
-        private void PasteIntoDocument(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            var textToPaste = button.Tag as string;
-
-            _searchResultClickHandler.Invoke(textToPaste);
-        }
-
         #endregion
 
         #region Private methods
@@ -69,6 +61,14 @@ namespace WordCrmPlugin
             {
                 FolderSelect.Items.Add(folderName);
             }
+        }
+
+        private void PasteIntoDocument(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var textToPaste = button.Tag as string;
+
+            _searchResultClickHandler.Invoke(textToPaste);
         }
 
         private void AddSearchResultsToUi(IEnumerable<SearchResult> results)
