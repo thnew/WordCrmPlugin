@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WordCrmPlugin.Models;
 
 namespace WordCrmPlugin
 {
@@ -35,6 +36,7 @@ namespace WordCrmPlugin
 
             _searchResultClickHandler = searchResultClickHandler;
 
+            PreFillFolderSelect();
             AddExampleSearchResult();
         }
 
@@ -49,8 +51,10 @@ namespace WordCrmPlugin
 
         private void PasteIntoDocument(object sender, RoutedEventArgs e)
         {
+            var button = sender as Button;
+
             // TODO: Load real searchResult
-            var textToPaste = "Test";
+            var textToPaste = button.Tag as string;
 
             _searchResultClickHandler.Invoke(textToPaste);
         }
@@ -59,7 +63,7 @@ namespace WordCrmPlugin
 
         #region Private methods
 
-        private void AddExampleSearchResult()
+        private void PreFillFolderSelect()
         {
             FolderSelect.Items.Add("--All--");
             FolderSelect.Items.Add("HR");
@@ -67,8 +71,16 @@ namespace WordCrmPlugin
             FolderSelect.Items.Add("Travelcosts");
 
             FolderSelect.SelectedIndex = 0;
+        }
 
-            SearchResults.Items.Add("dffgd");
+        private void AddExampleSearchResult()
+        {
+            SearchResults.Items.Add(new SearchResult
+            {
+                Title = "What are the high level features included in Contoso Business Solutions?",
+                Content = "Contoso Business Solutions has these features included:Social listeing Social media analytics Workflows and approvals Sales automations Cutomer experience",
+                Link = new Uri("http://google.de")
+            });
         }
 
         #endregion

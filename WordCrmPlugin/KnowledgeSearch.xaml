@@ -6,7 +6,7 @@
              xmlns:wpf="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    
+
     <Grid Background="#FFE6E6E6" Margin="0,0,0,-16">
         <Label Content="Knowledge Search:" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.221,-1.039" FontWeight="Bold"/>
         <TextBox Padding="5" HorizontalAlignment="Stretch" Height="23" Margin="0,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
@@ -31,23 +31,29 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <Label HorizontalAlignment="Stretch" FontWeight="Bold" Margin="0,0,0,0" Content="Hello" />
-                                    <TextBlock Text="Content..\nddsfs" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="70" Margin="0,30,0,0" />
+                                    <TextBlock HorizontalAlignment="Stretch" Foreground="#FF016BFF" FontWeight="Bold" Margin="0,0,0,0" Text="{Binding Title}" />
+                                    <TextBlock TextWrapping="Wrap"
+                                               Text="{Binding ShortDescription}"
+                                               HorizontalAlignment="Stretch"
+                                               VerticalAlignment="Top"
+                                               Height="70"
+                                               Margin="0,20,0,0"
+                                               Foreground="#FF555555" />
 
-                                    <wpf:Button Click="PasteIntoDocument" Content="Paste into Document" Margin="0,110,0,0" Padding="5"></wpf:Button>
+                                    <wpf:Button Click="PasteIntoDocument" Background="#fff" Content="Paste into Document" Tag="{Binding ContentToPaste}" Margin="0,110,0,0" Padding="5" HorizontalAlignment="Left"></wpf:Button>
                                 </Grid>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
             </ListView.View>
-            <ListView Height="100" Width="100">
+            <!--<ListView Height="100" Width="100">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
                     </GridView>
                 </ListView.View>
-            </ListView>
+            </ListView>-->
         </ListView>
 
     </Grid>
